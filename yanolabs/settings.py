@@ -32,7 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-eq(f=+o!(b14o09to!s++h=gwv9iluvi-pk3q*=+qbn813-*&='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['yanolabstest.onrender.com', 'localhost', '127.0.0.1']
 
