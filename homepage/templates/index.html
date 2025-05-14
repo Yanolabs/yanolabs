@@ -1,0 +1,349 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>YanoLabs - Get Reliable Tech Talent</title>
+    <meta name="description" content="Page-specific description">
+    <meta name="keywords" content="Page-specific keywords">
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+<body>
+<div class="wrapper">
+  <header id="yanoHeader" class="nav-menu sticky">
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}">
+        </div>
+        <h2>anoLabs</h2>
+        <div id="menuIcon" class="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul id="navLinks" class="nav-links">
+            <li><button onclick="location.href='#home'">Home</button></li>
+            <li><button onclick="location.href='#services'">Services</button></li>
+            <li><button onclick="location.href='#contacts'">Contacts</button></li>
+            <li><button onclick="location.href='#yanoJobs'">YanoJobs</button></li>
+        </ul>
+  </header>
+  <main>
+<!-- Home section-->
+<section class="yano-home" id="home">
+    <div class="yano-home__header">
+        <h1>GET RELIABLE TECH TALENT</br>
+            <span class="header-span"> Whether you need a world-class team for your next project or a vetted
+            engineer on contract, we've got you covered.</span></h1>
+    </div>
+    <div class="home-btn">
+        <button id="homeBtn" onclick="toggleForm()"> Get Service <i class="fas fa-chevron-down"></i></button>
+    </div>
+    <div class="myform" id="myForm">
+    <div class="form-container">
+    <form class="service-form" id="serviceForm" method="POST" action="{% url 'service_request' %}">
+        {% csrf_token %}
+        <div class="form-sec1">
+          <div class="form-field">
+            <label for="service">Service:</label>
+            <select id="service" name="service">
+                <option value="">-- Select a service --</option>
+                <option value="consultation">Free Consultation</option>
+                <option value="app">App Development</option>
+                <option value="support">Ongoing Support & Maintenance</option>
+                <option value="software">Software Solutions</option>
+                <option value="staffing">Staff Augmentation</option>
+                <option value="web">Web Design</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <div class="label-div">
+            <label for="method">Contact Method: <span class="label-span"></br>How can we contact you?</span></label>
+            </div>
+            <select id="method" name="method">
+                <option value="">-- Select Method --</option>
+                <option value="call">Call</option>
+                <option value="email">Email</option>
+                <option value="messaging">Messaging</option>
+                <option value="telegram">Telegram</option>
+                <option value="whatsapp">Whatsapp</option>
+                <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-sec2">
+          <div class="form-field">
+            <label for="comms">Contact Info: <span class="label-span"></span></label>
+            <input type="text" id="comms" name="comms" maxlength="280" oninput="updateCount()" required placeholder="e.g Enter Email, Phone number etc">
+          </div>
+          <div class="form-btn">
+            <button type="submit">Submit</button>
+          </div>
+        </div>
+    </form>
+    </div>
+  </div> 
+</section>
+<section class="more-section" id="more">
+    <div class="yano-more" data-aos="zoom-in-up" data-aos-delay="100">
+        <div class="yano-inter">
+            <div class="trigger-section" id="trigger-section">
+                <h3 class="yano-text1" id="yano-text1" data-aos="fade-right" data-aos-delay="300"></h3>
+            </div>
+            <div class="inter-img">
+                <img src="{% static 'images/internet.png' %}" data-aos="zoom-in-up" data-aos-delay="500">
+            </div>
+        </div>
+        <div class="yano-content" id="services" data-aos="zoom-in-up" data-aos-delay="1000">
+            <div class="content-bg">
+                <div class="yano-content-1">
+                    <h4>At YanoLabs, We eliminate the guesswork and risk from finding reliable Tech engineers.</h4>
+                </div>
+            <div class="yano-group-1">
+                <div class="yano-content-2" id="yano-content-2" data-aos="zoom-in-left" data-aos-delay="1200">
+                    <h4>Web Development</h4>
+                    <h5 id="webH5">Beautiful. Functional. Fast.</h5>
+                    <p>From sleek personal sites to full-featured e-commerce platforms</p>
+                    <div class="ui-img">
+                        <img src="{% static 'images/ui1.jpg' %}" class="webui" />
+                        <img src="{% static 'images/ui2.jpg' %}" class="webui" />
+                        <img src="{% static 'images/ui3.jpg' %}" class="webui" />
+                        <img src="{% static 'images/ui4.jpg' %}" class="webui" />
+                        <img src="{% static 'images/ui5.jpg' %}" class="webui" />
+                        <img src="{% static 'images/ui6.jpg' %}" class="webui" />
+                      </div>
+                </div>
+                <<div class="yano-content-2" id="yano-content-2_1" data-aos="zoom-in-right" data-aos-delay="1400">
+                    <h4>App Development</h4>
+                    <h5 id="appH5">Apps that perform. Experiences that matter.</h5>
+                    <p>From internal team apps to full-scale customer-facing products</p>
+                    <div class="ui-img">
+                        <img src="{% static 'images/appui1.jpg' %}" class="appui" />
+                        <img src="{% static 'images/appui2.jpg' %}" class="appui" />
+                        <img src="{% static 'images/appui3.jpg' %}" class="appui" />
+                        <img src="{% static 'images/appui4.jpg' %}" class="appui" />
+                        <img src="{% static 'images/appui5.jpg' %}" class="appui" />
+                        <img src="{% static 'images/appui6.jpg' %}" class="appui" />
+                      </div>
+                </div>
+            </div>
+            <div class="yano-group-2">
+                <div class="yano-content-3" data-aos="zoom-in-left" data-aos-delay="1450">
+                    <h4>Software Development & Solutions</h4>
+                    <h5 id="softH5">Custom tools for Real-World impact.</h5>
+                    <p>Streamline workflows, enhance productity and unlock growth opportunities for your business.</p>
+                    <div class="ui-img">
+                        <img src="{% static 'images/soft1.jpg' %}" class="softui" />
+                        <img src="{% static 'images/soft2.jpg' %}" class="softui" />
+                        <img src="{% static 'images/soft3.jpg' %}" class="softui" />
+                        <img src="{% static 'images/soft4.jpg' %}" class="softui" />
+                      </div>
+                </div>
+                <div class="yano-content-4" data-aos="zoom-in-right" data-aos-delay="1500">
+                    <div class="staff">
+                        <div class="staff-bg">
+                            <h4>Staff Augmentantion</h4>
+                            <h5 id="staffH5">Extend your team with Elite Talent</h5>
+                            <p>Get access to pre-vetted, high-performing developers who integrate seamlessly with your team whether short-term, long-term or project-based.</p>
+                        </div>
+                    </div>
+                    <div class="support" data-aos="zoom-in-right" data-aos-delay="1550">
+                        <div class="support-bg">
+                            <h4>Ongoing Support & Maintenance</h4>
+                            <h5 id="supportH5">Beyond delivery. Always reliable.</h5>
+                            <p>We provide continous support, performance tuning and security updates to keep your systems running at their best. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contacts" id="contacts">
+    <div class="form-container2">
+        <h4>Your project derserves more than a freelancer - it deserves a partner.</h4>
+        <h5>Talk to us:</h5>
+        <form class="contact-form" id="contactForm" method="POST" action="{% url 'contact_submit' %}">
+            {% csrf_token %}
+            <div class="form-sec3">
+                <div class="form-field2">
+                    <label for="service2">Service: </label>
+                    <select id="service2" name="service2">
+                        <option value="">-- Select a service --</option>
+                        <option value="consultation">Free Consultation</option>
+                        <option value="app">App Development</option>
+                        <option value="support">Ongoing Support & Maintenance</option>
+                        <option value="software">Software Solutions</option>
+                        <option value="staffing">Staff Augmentation</option>
+                        <option value="web">Web Design</option>
+                    </select>
+                </div>
+                <div class="form-field2">
+                    <div class="label-div">
+                        <label for="method2">Contact Method: <span class="label-span"></br>How can we contact you?</span></label>
+                    </div>
+                    <select id="method2" name="method2">
+                        <option value="">-- Select Method --</option>
+                        <option value="call">Call</option>
+                        <option value="email">Email</option>
+                        <option value="messaging">Messaging</option>
+                        <option value="telegram">Telegram</option>
+                        <option value="whatsapp">Whatsapp</option>
+                        <option value="other">Other</option>
+                    </select>
+              </div>
+            </div>
+                <div class="form-field2">
+                    <label for="comms2">Contact Info:</label>
+                    <input type="text" id="comms2" name="comms2" maxlength="280" required placeholder="e.g Enter Email, Phone number etc">
+                </div>
+                <div class="form-field2">
+                    <label for="moreinfo">Project brief description:</label>
+                    <textarea type="text" id="moreinfo" name="moreinfo" row="1" maxlength="280" placeholder="Tell us a bit about your project..."></textarea>
+                </div>
+            <div class="form-sec5">
+                <div class="contact-btn">
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>    
+</section>
+
+<section class="faq-section" id="faqSection">
+    <h4>FAQs</h4>
+    <div class="faq-box">
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+              What is YanoLabs?
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              YanoLabs is an IT company that offers Tech solutions.</br> We design and build websites, softwares and apps. We also provide pre-vetted staff/engineers to clients for short-term contract, long-term contract or project based.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+              How much do you charge for Web Development?
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              From as low as $100 depending with the type of website and content amount.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+              How do I contact you?
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              You can reach us via email at info@yanolabs.com or phone: +254 746 585846.
+            </div>
+        </div>
+    </div>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+              What programming languages do your programmers use?
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              Our engineers are skilled in various languages. We haven't met a client with demands we couldn't meet.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+              My App was built by a freelancer can you maintain and optimize it for me?
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              Yes. We provide ongoing Maintance and support at affordable rates depending on the work to be done.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+              How do you recruit your engineers?
+              <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+              By a strictly designed vetting system designed to only output the best.
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section class="yanojobs" id="yanoJobs">
+    <div class="yanojobs-container">
+        <h4>Are you a Designer or an Engineer looking for a career at YanoLabs?</h4>
+        <h5></h5>
+        <div class="yanojobs-btn">
+            <button id="openFormBtn">Apply Now</button>
+        </div>
+        <div id="cvFormModal">
+        <div class="modal-content">
+            <span id="closeFormBtn">&times;</span>
+            <form id="cvForm" method="POST" enctype="multipart/form-data" action="{% url 'apply_now' %}">
+                {% csrf_token %}
+                <label>Full Name:</label>
+                <input type="text" name="full_name" maxlength="280" required><br><br>
+
+                <label>Contact (Email or Phone):</label>
+                <input type="text" name="contact" maxlength="280" required><br><br>
+
+                <label>Upload CV (PDF, max 6MB):</label>
+                <input type="file" name="cv" accept=".pdf" required><br><br>
+                <div class="yanojobs-btn2">
+                <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+  </main>
+
+<!--Footer Section -->
+<footer>
+    <div class="footer-content">
+        <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#">X</a></li>
+            <li><a href="#faqSection">FAQs</a></li>
+        </ul>
+        <p>All Rights Reserved.</br> &copy; 2025 YanoLabs.</p>
+    </div>
+</footer>
+</div>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 1000,
+        once: true,
+    });
+</script>
+
+<!-- AOS Library -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+<script defer src="{% static 'js/index.js' %}"></script>
+
+</body>
+</html>
