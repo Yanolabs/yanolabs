@@ -222,13 +222,13 @@ window.onclick = function(event) {
 const params = new URLSearchParams(window.location.search);
 
   if (params.get("contact_success") === "true") {
-    alert("Contact form submitted successfully.");
+    alert("Submitted successfully. Thank you for Choosing YanoLabs.");
   } 
   else if (params.get("success") === "true") {
     alert("Application sent successfully.");
   } 
   else if (params.get("service_success") === "true") {
-    alert("Service inquiry sent successfully.");
+    alert("Submitted successfully. Thank you for Choosing YanoLabs.");
   }
 
   if (params.has("contact_success") || params.has("success") || params.has("service_success")) {

@@ -569,6 +569,13 @@ input {
 	border-radius: 15px;
 	background: linear-gradient(rgba(255, 255, 255, 0.05));
 }
+.contact-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	flex-wrap: nowrap;
+}
 .form-container2 {
 	display: flex;
 	flex-direction: column;
@@ -698,6 +705,35 @@ input {
     background: black;
 	color: papayawhip;
 	box-shadow: inset 5px 5px 10px rgba(215, 38, 56, 0.4);
+}
+.contact-form2 {
+	display: flex;
+	align-content: flex-start;
+	flex-direction: column;
+	gap: 10px;
+	padding: 35px;
+	margin-top: 15px;
+	border-radius: 8px;
+	background: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
+}
+.form-field8 {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	gap: 10px;
+}
+.form-field8 h4 {
+	background: linear-gradient(to left, red, blue);
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 7px;
+}
+.form-field8 p {
+	color: papayawhip;
+	font-size: clamp(0.9rem, 1.4vw, 1.6rem);
+	font-family: "Montserrat", sans-serif;
+	margin-bottom: 7px;
 }
 .faq-section {
 	display: flex;
@@ -852,7 +888,6 @@ input {
     color: #000;
 }
 
-/* Basic Input Styling */
 input, button {
     width: 100%;
     padding: 8px;
@@ -983,6 +1018,9 @@ footer {
 		flex-wrap: wrap;
 		flex-direction: column;
 		margin-top: 7px;
+	}
+	.contact-container {
+		flex-wrap: wrap;
 	}
 	.form-sec3 {
 		flex-wrap: wrap;

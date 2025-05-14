@@ -169,6 +169,7 @@
     <div class="form-container2">
         <h4>Your project derserves more than a freelancer - it deserves a partner.</h4>
         <h5>Talk to us:</h5>
+        <div class="contact-container">
         <form class="contact-form" id="contactForm" method="POST" action="{% url 'contact_submit' %}">
             {% csrf_token %}
             <div class="form-sec3">
@@ -213,6 +214,21 @@
                 </div>
             </div>
         </form>
+        <div class="contact-form2">
+            <div class="form-field8">
+                <h4>Alternatively, Reach us Via:</h4>
+                <div class="email-field">
+                    <p><i class="fas fa-envelope"></i> info@yanolabs.com</p>
+                </div>
+                <div class="phone-field">
+                    <p><i class="fas fa-phone-alt"></i> +254 746 585846</p>
+                </div>
+                <div class="location-field">
+                    <p><i class="fas fa-map-marker-alt"></i> Machakos, Kenya</p>
+                </div>
+            </div>
+        </div>
+        </div>
     </div>    
 </section>
 
@@ -318,7 +334,7 @@
     <div class="footer-content">
         <ul class="footer-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#">X</a></li>
+            <li><a href="https://x.com/yanolabs" target="_blank">X</a></li>
             <li><a href="#faqSection">FAQs</a></li>
         </ul>
         <p>All Rights Reserved.</br> &copy; 2025 YanoLabs.</p>
