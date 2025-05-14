@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-eq(f=+o!(b14o09to!s++h=gwv9iluvi-pk3q*=+qbn813-*&=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['yanolabstest.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
