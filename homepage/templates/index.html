@@ -232,6 +232,34 @@
     </div>    
 </section>
 
+<section class="yanojobs" id="yanoJobs">
+    <div class="yanojobs-container">
+        <h4>Are you a Designer or an Engineer looking for a career at YanoLabs?</h4>
+        <h5></h5>
+        <div class="yanojobs-btn">
+            <button id="openFormBtn">Apply Now</button>
+        </div>
+        <div id="cvFormModal">
+        <div class="modal-content">
+            <span id="closeFormBtn">&times;</span>
+            <form id="cvForm" method="POST" enctype="multipart/form-data" action="{% url 'apply_now' %}">
+                {% csrf_token %}
+                <label>Full Name:</label>
+                <input type="text" name="full_name" maxlength="280" required><br><br>
+
+                <label>Contact (Email or Phone):</label>
+                <input type="text" name="contact" maxlength="280" required><br><br>
+
+                <label>Upload CV (PDF, max 6MB):</label>
+                <input type="file" name="cv" accept=".pdf" required><br><br>
+                <div class="yanojobs-btn2">
+                <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
 <section class="faq-section" id="faqSection">
     <h4>FAQs</h4>
     <div class="faq-box">
@@ -297,34 +325,6 @@
             </div>
         </div>
     </div>
-    </div>
-</section>
-
-<section class="yanojobs" id="yanoJobs">
-    <div class="yanojobs-container">
-        <h4>Are you a Designer or an Engineer looking for a career at YanoLabs?</h4>
-        <h5></h5>
-        <div class="yanojobs-btn">
-            <button id="openFormBtn">Apply Now</button>
-        </div>
-        <div id="cvFormModal">
-        <div class="modal-content">
-            <span id="closeFormBtn">&times;</span>
-            <form id="cvForm" method="POST" enctype="multipart/form-data" action="{% url 'apply_now' %}">
-                {% csrf_token %}
-                <label>Full Name:</label>
-                <input type="text" name="full_name" maxlength="280" required><br><br>
-
-                <label>Contact (Email or Phone):</label>
-                <input type="text" name="contact" maxlength="280" required><br><br>
-
-                <label>Upload CV (PDF, max 6MB):</label>
-                <input type="file" name="cv" accept=".pdf" required><br><br>
-                <div class="yanojobs-btn2">
-                <button type="submit">Submit</button>
-                </div>
-            </form>
-        </div>
     </div>
 </section>
   </main>

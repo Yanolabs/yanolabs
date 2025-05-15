@@ -207,15 +207,28 @@ const openBtn = document.getElementById("openFormBtn");
 const closeBtn = document.getElementById("closeFormBtn");
 
 if (openBtn) {
-    openBtn.onclick = () => modal.style.display = "block";
+    openBtn.onclick = () => {
+        modal.style.display = "block";
+        void modal.offsetWidth;
+        modal.classList.add("show");
+    };
 }
+
 if (closeBtn) {
-    closeBtn.onclick = () => modal.style.display = "none";
+    closeBtn.onclick = () => {
+        modal.classList.remove("show");
+        setTimeout(() => {
+            modal.style.display = "none";
+        }, 300);
+    };
 }
 
 window.onclick = function(event) {
     if (event.target === modal) {
-        modal.style.display = "none";
+        modal.classList.remove("show");
+        setTimeout(() => {
+            modal.style.display = "none";
+        }, 300);
     }
 }
 
