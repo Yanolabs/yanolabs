@@ -50,7 +50,7 @@
         <div class="form-sec1">
           <div class="form-field">
             <label for="service">Service:</label>
-            <select id="service" name="service">
+            <select id="service" name="service" required>
                 <option value="">-- Select a service --</option>
                 <option value="consultation">Free Consultation</option>
                 <option value="app">App Development</option>
@@ -64,7 +64,7 @@
             <div class="label-div">
             <label for="method">Contact Method: <span class="label-span"></br>How can we contact you?</span></label>
             </div>
-            <select id="method" name="method">
+            <select id="method" name="method" required>
                 <option value="">-- Select Method --</option>
                 <option value="call">Call</option>
                 <option value="email">Email</option>
@@ -175,7 +175,7 @@
             <div class="form-sec3">
                 <div class="form-field2">
                     <label for="service2">Service: </label>
-                    <select id="service2" name="service2">
+                    <select id="service2" name="service2" required>
                         <option value="">-- Select a service --</option>
                         <option value="consultation">Free Consultation</option>
                         <option value="app">App Development</option>
@@ -189,7 +189,7 @@
                     <div class="label-div">
                         <label for="method2">Contact Method: <span class="label-span"></br>How can we contact you?</span></label>
                     </div>
-                    <select id="method2" name="method2">
+                    <select id="method2" name="method2" required>
                         <option value="">-- Select Method --</option>
                         <option value="call">Call</option>
                         <option value="email">Email</option>
@@ -205,7 +205,7 @@
                     <input type="text" id="comms2" name="comms2" maxlength="280" required placeholder="e.g Enter Email, Phone number etc">
                 </div>
                 <div class="form-field2">
-                    <label for="moreinfo">Project brief description:</label>
+                    <label for="moreinfo">Project brief description: <span class="label-span"></br>(Optional)</span></label>
                     <textarea type="text" id="moreinfo" name="moreinfo" row="1" maxlength="280" placeholder="Tell us a bit about your project..."></textarea>
                 </div>
             <div class="form-sec5">
