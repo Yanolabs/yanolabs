@@ -88,6 +88,8 @@
     </div>
   </div> 
 </section>
+
+<!-- More section-->
 <section class="more-section" id="more">
     <div class="yano-more" data-aos="zoom-in-up" data-aos-delay="100">
         <div class="yano-inter">
@@ -165,6 +167,7 @@
     </div>
 </section>
 
+<!-- Contacts section-->
 <section class="contacts" id="contacts">
     <div class="form-container2">
         <h4>Your project derserves more than a freelancer - it deserves a partner.</h4>
@@ -232,6 +235,30 @@
     </div>    
 </section>
 
+<!-- Partner section-->
+<section class="partner-section">
+<div class="partner-section">
+  <h2>What Some of Our Partners Say</h2>
+  <div class="partner-slider">
+    
+    {% for partner in partners %}
+    <div class="partner {% if forloop.first %}active{% endif %}">
+        {% if partner.image %}
+      <img src="{{ partner.image }}" alt="{{ partner.name }}" class="partner-img" />
+      {% endif %}
+      <p>"{{ partner.quote }}"</p>
+      <h4>{{ partner.name }} – {{ partner.role }}</h4>
+    </div>
+    {% endfor %}
+
+    <button class="prev-btn">&#10094;</button>
+    <button class="next-btn">&#10095;</button>
+
+</div>
+</div>
+</section>
+
+<!-- YanoJobs section-->
 <section class="yanojobs" id="yanoJobs">
     <div class="yanojobs-container">
         <h4>Are you a Designer or an Engineer looking for a career at YanoLabs?</h4>

@@ -16,9 +16,12 @@ from .forms import CVApplicationForm
 from django.contrib.admin.views.decorators import staff_member_required
 from django.http import FileResponse, Http404
 
+from .models import Partner
+
 
 def index(request):
-    return render(request, 'index.html')
+    partners = Partner.objects.all()
+    return render(request, 'index.html', {'partners': partners})
 
 
 def service_request(request):
@@ -90,6 +93,7 @@ def contact_submit(request):
             return HttpResponse(f"Error: {e}", status=500)
 
     return redirect('/')
+
 
 def apply_now(request):
     if request.method == 'POST':

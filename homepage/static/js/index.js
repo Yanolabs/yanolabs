@@ -248,3 +248,32 @@ const params = new URLSearchParams(window.location.search);
   const url = window.location.origin + window.location.pathname;
   window.history.replaceState({}, document.title, url);
 }
+
+
+// PARTNER SECTION
+const partners = document.querySelectorAll('.partner');
+  const nextBtn = document.querySelector('.next-btn');
+  const prevBtn = document.querySelector('.prev-btn');
+  let currentIndex = 0;
+
+  function showPartner(index) {
+    partners.forEach(p => p.classList.remove('active'));
+    partners[index].classList.add('active');
+  }
+
+  function nextPartner() {
+    currentIndex = (currentIndex + 1) % partners.length;
+    showPartner(currentIndex);
+  }
+
+  function prevPartner() {
+    currentIndex = (currentIndex - 1 + partners.length) % partners.length;
+    showPartner(currentIndex);
+  }
+
+  nextBtn.addEventListener('click', nextPartner);
+  prevBtn.addEventListener('click', prevPartner);
+
+  // Auto-play every 5 seconds
+  setInterval(nextPartner, 5000);
+  
